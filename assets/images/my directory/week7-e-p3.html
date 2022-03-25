@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week 7 ePortfolio part 3</title>
+	<style type="text/css">
+
+		table{	margin: auto; 
+				border-collapse: 
+				collapse; width: 700px  }
+
+		label{white-space: nowrap;
+			  border:1px solid;
+			  height:40px;
+			  text-align: center;}
+		
+		h3{text-align: center;
+		   visibility: hidden;
+		   display: none; }
+		
+		.flex{ display: flex;}
+		
+		.jcontent{justify-content: center; }
+
+		td[class="flex width"]>label{box-sizing: border-box;
+								width: 400px;
+								padding-top:10px;}
+
+		.width{width: 400px;
+			   padding-top: 0px;
+			   padding-bottom: 0px}
+
+		td[class~="width"]{border-style: hidden; 
+						   margin: auto;}
+
+		select{width: 166px}
+
+		tr,td,label{border-style: hidden;}
+
+	</style>
+</head>
+<body>
+<h3>Registration for Covid-19 Volunteer -&reg;C19-Team</h3>
+<form method="" action="">
+
+<!-- original -->
+
+<table border="1"width="400" height="50" cellpadding="10" cellspacing="2">
+<tr>
+	<tr>
+		<td class="flex width"><label  class ="l" for="Fullname">Fullname</label></td>
+		<td class="flex jcontent width"><input  type="text" name="Fullname" id="Fullname" maxlength="30"></td>
+	</tr>
+	<tr>
+		<td class="flex width"><label for="Email">Email</label></td>
+		<td class="flex jcontent width"><input type="Email" name="Email" id="Email"></td>
+	</tr>
+	<tr>
+		<td class="flex width"><label for="Date">Date you can start</label></td>
+		<td class="flex jcontent width"><input type="Date" name="Date" id="Date"></td>
+	</tr>
+	<tr>
+		<td class="flex width"><label for="morning">Morning shift preference</label></td>
+		<td class="flex jcontent width"><input type="time" name="morning" id="morning"></td>
+	</tr>
+	<tr>
+		<td class="flex width"><label for="evening">Evening shift perference</label></td>
+		<td class="flex jcontent width"><input type="time" name="evening" id="evening"></td>
+	</tr>
+	<tr>
+		<td class="flex width"><label for="hours">How many hours you can work? In multiple of 3</label></td>
+		<td class="flex jcontent width">
+			<select id="hours" name="hours">
+			<option></option>
+			<option>3</option>
+			<option>6</option>
+			<option>9</option>
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td class="flex width"><label>Distance you willing to commute to volunteer center?</label></td>
+		<td  class="flex jcontent width">
+			1<input type="range" name="distance" maxlength="15" minlength="1" value="3">15
+		</td>
+	</tr>
+	<tr>
+		<td class="flex width"><label>You currency perference for payment?</label></td>
+		<td  class="flex jcontent width"><input type="radio" name="currency" id="pound"><label>&#163;</label>
+			<input type="radio" name="currency" id="yen"><label>&#165;</label>
+			<input type="radio" name="currency" id="euro"><label>&#128;</label>
+		</td>
+	</tr>
+</tr>
+	<tr>
+		<td colspan="2" align="center">
+			<textarea rows="6" cols="40" placeholder="Type your home address.."></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><del>You will be given daily meals</del></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="checkbox" name="terms" id="terms" checked="true" disabled="true"><label for="terms">I agree to all terms and conditions</label></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><label for="prove">Prove you are not robot:10&lt;20?</label><input type="checkbox" name="prove" id="prove"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="submit" name="" value="Volunteer now!"></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><input type="reset" name="" value="Start over" ></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center">For more informaton, visit MOH <a href="https://www.moh.gov.bn/Pages/Home.aspx" target="_blank">website</a></td>
+	</tr>
+
+</table>
+
+
+</body>
+</html>
