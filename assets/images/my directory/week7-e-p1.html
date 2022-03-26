@@ -5,100 +5,110 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Week 7 ePortfolio part 1</title>
 	<style type="text/css">
-		table{	margin: auto; border:1px;
-				border-collapse: collapse;
-				border-style: solid;}
-
-		label{white-space: nowrap;}
-
 		h3{text-align: center;}
 		
-		td{ border-top: 1px solid black ;
-			border-bottom: 1px solid black;
-			border-collapse: collapse;}
+		body>div{margin: 0px auto;
+					width: 600px;
+					border-collapse: collapse;}
 
-		select{width: 150px}
+		div>form>div{border: 1px solid;}
 
+		form>div:nth-child(1)>div,form>div:nth-child(2)>div,
+		form>div:nth-child(3)>div,form>div:nth-child(4)>div,
+		form>div:nth-child(5)>div,form>div:nth-child(6)>div,
+		form>div:nth-child(7)>div,form>div:nth-child(8)>div {padding: 5px;display: inline-block;width: 380px;}
+
+		form>div:nth-child(9),form>div:nth-child(10),
+		form>div:nth-child(11),form>div:nth-child(12),
+		form>div:nth-child(13),form>div:nth-child(14),
+		form>div:nth-child(15) {padding: 5px;text-align: center;}
 
 
 
 	</style>
 </head>
 <body>
-<h3>Registration for Covid-19 Volunteer -&reg;C19-Team</h3>
+<div >
+<h3>Registration for Covid-19 Volunteer - &reg; C19-Team</h3>
 <form method="" action="">
 
-<table border="1"width="400" height="50" cellpadding="10" cellspacing="2">
-	<tr>
-		<td><label for="Fullname">Fullname</label></td>
-		<td><input type="text" name="Fullname" id="Fullname" maxlength="30"></td>
-	</tr>
-	<tr>
-		<td><label for="Email">Email</label></td>
-		<td><input type="Email" name="Email" id="Email"></td>
-	</tr>
-	<tr>
-		<td><label for="Date">Date you can start</label></td>
-		<td><input type="Date" name="Date" id="Date"></td>
-	</tr>
-	<tr>
-		<td><label for="morning">Morning shift preference</label></td>
-		<td><input type="time" name="morning" id="morning"></td>
-	</tr>
-	<tr>
-		<td><label for="evening">Evening shift perference</label></td>
-		<td><input type="time" name="evening" id="evening"></td>
-	</tr>
-	<tr>
-		<td><label for="hours">How many hours you can work? In multiple of 3</label></td>
-		<td >
-			<select id="hours" name="hours">
-			<option></option>
-			<option>3</option>
-			<option>6</option>
-			<option>9</option>
-			</select>
-		</td>
-	</tr>
-	<tr>
-		<td>Distance you willing to commute to volunteer center?</td>
-		<td>
-			1<input type="range" name="distance" maxlength="15" minlength="1" value="3">15
-		</td>
-	</tr>
-	<tr>
-		<td>You currency perference for payment?</td>
-		<td><input type="radio" name="currency" id="pound"><label>&#163;</label>
-			<input type="radio" name="currency" id="yen"><label>&#165;</label>
-			<input type="radio" name="currency" id="euro"><label>&#128;</label>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center">
-			<textarea rows="6" cols="40" placeholder="Type your home address.."></textarea>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><del>You will be given daily meals</del></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><input type="checkbox" name="terms" id="terms" checked="true" disabled="true"><label for="terms">I agree to all terms and conditions</label></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><label for="prove">Prove you are not robot:10&lt;20?</label><input type="checkbox" name="prove" id="prove"></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><input type="submit" name="" value="Volunteer now!"></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center"><input type="reset" name="" value="Start over" ></td>
-	</tr>
-	<tr>
-		<td colspan="2" align="center">For more informaton, visit MOH <a href="https://www.moh.gov.bn/Pages/Home.aspx" target="_blank">website</a></td>
-	</tr>
+<div>
+	<div><label for="fullname">Fullname</label></div>
+         		   <input type="text" name="fullname" id="fullname" maxlength="30">
+</div>
 
+<div>
+	<div><label for="email">Email</label></div>
+	     		   <input type="email" name="email" id="email">
+</div>
 
-</table>
+<div>
+	<div><label>Date you can start</label></div>
+	   			   <input type="date" name="">
+</div>
+
+<div>
+	<div><label>Morning shift preference</label></div>
+	  			   <input type="time" name="">
+</div>
+
+<div>
+	<div><label>Evening shift preference</label></div>
+	    		   <input type="time" name="">
+</div>
+
+<div>
+	<div><label>How many hours you can work? In multiple of 3</label></div>
+	    		   <input type="number" name="quantity" id="quantity" step="3" min="3" max="9">
+</div>
+
+<div>
+	<div><label>Distance you willing to commute to volunteer center?</label></div>
+	   		      1<input type="range" name="range" id="range" step="1" min="1" max="15">15
+</div>
+
+<div>
+	<div><label>You currency perference for payment?</label></div>
+	               <input type="radio" name="$symbol" id="pound">
+		           <label for="pound">&pound;</label>
+		           <input type="radio" name="$symbol" id="yen">
+	               <label for="yen">&yen;</label>
+	               <input type="radio" name="$symbol" id="euro">
+		           <label for="euro">&euro;</label>
+</div>
+
+<div>
+	 	<label for="text-area"></label>
+		<textarea name="textarea" id="textarea" rows="6" cols="40" placeholder="Type your home address"></textarea>
+</div>
+
+<div>
+	    <strike>You will be given daily meals</strike>
+</div>
+
+<div>
+		<label><input type="checkbox" name="scales" id="scales" checked disabled>I agree to all terms and conditions</label>
+</div>
+
+<div>
+		<label>Prove you are not robot: 10 &lt; 20?
+		<input type="checkbox" name="scales" id="scales"></label>
+</div>
+
+<div>
+		<input type="submit" name="" value="Volunteer Now!">
+</div>
+
+<div>
+		<input type="reset" name="" value="Start Over">
+</div>
+
+<div>
+		<label>For more informaton, visit MOH
+	    <a href="" target="_blank">website</a></label>
+</div>
+</form>
+</div>
 
 </body>
 </html>
