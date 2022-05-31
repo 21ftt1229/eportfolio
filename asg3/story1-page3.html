@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<script src="https://kit.fontawesome.com/b0f29e9bfe.js" crossorigin="anonymous"></script>
+	<title>Story 1 - Page 3</title>
+
+<style type="text/css">
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+  /*link button*/
+  a {color: black;
+     text-align: center;
+     text-decoration: none;}
+
+  a:hover {color: white;
+           text-decoration: none;}
+
+  /*a:visited {color: black;
+             text-decoration: none;}*/
+
+  p {font-family: sans-serif;
+     font-size: 16px;}
+
+  img {display: inline-block;
+       width: 180px;
+       height: 180px;}
+
+  span:hover {color: #636363;}
+
+  /*navigation button*/
+  button {border: none;
+          background-color: transparent;
+          cursor: pointer;
+          margin: 10px;
+          transition: transform 0.5s;}
+
+  button:focus {outline: none;}
+
+  button:hover i {color: #636363;}
+
+  i {font-size: 50px;
+       color: gray;}
+
+  /*#storyContent{padding: 30px;
+                  margin: 30px;
+                  text-align: justify;
+                  overflow: none;}*/
+
+  /*content*/
+  #storyText{overflow: scroll;
+             font-family: "Times New Roman", Times, serif;
+             font-style: italic;
+             font-weight: 15px;
+             letter-spacing: 1px;
+             line-height: 1.5;}
+
+  /*rating*/
+  #avg {font-weight: normal;}
+  
+  #round {color: goldenrod;}
+
+  #roundp, #resultTitle {display: none;
+                         font-family: "Times New Roman";
+                         font-size: 16px;
+                         line-height: 2}
+
+
+  /*translate list*/
+  #translate {width: 170px;}
+  /*voice list*/
+  #voicelist {width: 170px;}
+
+  /*translator*/
+  #settingS>div>button {cursor: pointer;
+                        padding: 4px 1px;
+                        border-radius: 4px;
+                        width: 5em;
+                        transition: 0.25s ease;
+                        background-color: #E99900;
+                        display: inline-block;}
+
+  #settingS>div>button:hover {background: #636363;
+                              transition: 0.25s ease;}
+
+  /*speech*/
+  #speak>img, #speak2>img{float: right;
+                          width:30px;
+                          height:30px;}
+
+  .speechbtn{display: inline-flex;}
+
+  /*button*/
+  .button1{background-color: #FFCA61;
+           border: none;
+           border-radius: 4px;
+           color: black;
+           padding: 10px 24px;
+           text-align: center;
+           text-decoration: none;
+           /*display: inline-block;*/
+           font-size: 12px;
+           margin: 2px 4px;
+           cursor: pointer;
+           transition-duration: 0.5s;}
+
+  .button1:hover {background-color: #D78F00;
+                  color: white;}
+
+  .button2{background-color: #ACAC9C;
+           border: none;
+           border-radius: 4px;
+           color: black;
+           padding: 10px 24px;
+           text-align: center;
+           text-decoration: none;
+           /*display: inline-block;*/
+           font-size: 12px;
+           margin: 2px 4px;
+           cursor: pointer;
+           transition-duration: 0.5s;}
+
+  .button2:hover {background-color: #555548;
+                  color: white;}
+
+  .back{background-color: #ACAC9C;
+           border: none;
+           border-radius: 4px;
+           color: black;
+           padding: 10px 24px;
+           text-align: center;
+           text-decoration: none;
+           /*display: inline-block;*/
+           font-size: 12px;
+           margin: 2px 4px;
+           cursor: pointer;
+           transition-duration: 0.5s;
+           position: absolute;
+           bottom: -170px;}
+
+  .back:hover {background-color: #555548;
+               color: white;}
+
+  .next{background-color: #ACAC9C;
+        border: none;
+        border-radius: 4px;
+        color: black;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        /*display: inline-block;*/
+        font-size: 12px;
+        margin: 2px 4px;
+        cursor: pointer;
+        transition-duration: 0.5s;
+        position: absolute;
+        bottom: -140px;}
+
+  .next:hover {background-color: #555548;
+               color: white;}
+
+  /*header*/
+  .relative {position: relative;}
+
+  .description {position: absolute;
+                top: 8px;
+                right: 16px;
+                left: 50px;
+                font-size: 15px;
+                text-align: center;
+                line-height: 1.3;
+                font-family: "Times New Roman";}
+
+  /*navigation menu*/
+  .vertical-menu {width: 170px;}
+
+  .vertical-menu a {background-color: #eee;
+            color: black;
+            display: block;
+            padding: 12px;
+            text-decoration: none;}
+
+  .vertical-menu a:hover {background-color: #ccc;}
+
+  .vertical-menu a.active {background-color: #E99900;
+                 color: white;}
+
+  /*animation for title*/
+  .title {font-size: 25px;
+          font-weight: 15px;
+          text-align: center;
+          justify-content: center;
+          font-family: "Lucida Calligraphy"; 
+          position: relative;
+          animation-name: animation;
+          animation-duration: 3s;  
+          animation-fill-mode: forwards;
+          /*font-style: bold;*/}
+    
+  @keyframes animation {
+                        from {bottom: -500px;}
+                        to {bottom: 10px;}
+  }
+
+
+  /*layout*/
+  .container{display: grid;
+         height: 100vh;
+         grid-template-columns: 200px 1fr 1fr 200px;
+         grid-template-rows: auto 1fr auto;
+         grid-template-areas: 'header header header header'
+                  'leftside content content rightside'
+                  'footer footer footer footer';}
+
+  .container>div{/*background: #FFF7E4;*/
+                 /*background-color: #e5e5f7;*/
+                 opacity: 0.8;
+                 background-size: 10px 10px;
+                 background-image: radial-gradient(#444cf7, #444cf7 0.5px, #FFF7E4 0.5px);;
+                 padding: 15px;
+                 border: 2px;}
+
+  .container>div:nth-child(1){grid-area: header;
+                border-bottom-style: dashed;
+                /*text-align: center;*/}
+
+  .container>div:nth-child(2){grid-area: leftside;}
+
+  .container>div:nth-child(3){grid-area: content;
+                border-left-style: dashed;
+                border-right-style: dashed;
+                /*display: flex;*/
+                align-items: center;
+                justify-content: center;
+                text-align:center;
+                height: 120vh;
+                /*font-family: sans-serif;*/
+                bottom: -100px;}
+
+  .container>div:nth-child(4){grid-area: rightside;}
+
+  .container>div:nth-child(5){grid-area: footer;
+                border-top-style: dashed;
+                text-align:center;}
+
+  /*mobile view*/
+  @media screen and (max-width: 479px){
+      img{width: 70px;
+          height: 70px;}
+        
+      .container{
+          display: grid;
+          grid-template-columns: 1fr;
+          /*align-items: center;*/
+          grid-template-areas:'header'
+                              'content'
+                              'rightside'
+                              'leftside'
+                              'footer';}
+
+      .description{text-align: right;}
+
+      .container>div:nth-child(3){height: 120vh;}
+
+      .vertical-menu {width: 100%;}
+  }
+</style>
+</head>
+<body>
+  
+<div class ="container" id="ccolor">
+  <!--header-->
+  <div id="bgChanger1" class="relative">
+    <h1>STORYBOOK</h1>
+    <!-- <h2 id="ccolor2" class="description">WELCOME TO STORYBOOK!</h2>
+    <p id="ccolor3" class="description"><br>This StoryBook is suitable for your children under 18 years old. <br>Do not hesitate to rate us!</p>  -->
+  </div>
+
+  <!--leftside-->
+  <div  id="bgChanger2">
+  <div class ="vertical-menu">
+      <a href="" class="active">STORIES</a>
+        <a href="story1-page1.html">Alice In Wonderland</a>
+        <a href="story2-page1.html">Sleeping Beauty</a>
+        <a href="story3-page1.html">Goldilocks And The Three Bears</a>
+  </div>
+  </div>
+
+  <!--content-->
+  <div id="storyText">
+        <br>
+        <img src="images/porridge.png" alt="Porridge">
+        <img src="images/chairs.png" alt="Chairs">
+        <!-- <img src="images/bed.png" alt="Bed"> -->
+        <br>
+        <div id="content"></div>
+        <button class="back" onclick="location.href = 'story1-page2.html'">Back</button>
+        <!-- <button class="next"><a href="story3-page3.html">Next</a></button>  -->
+    </div>
+
+  <!--rightside-->
+  <div id="bgChanger4" class="langWrap">
+    <form id="settingS">
+            <!-- translator text -->
+            <div>
+                <center>- SETTING -</center><br><br>
+                Translate Text : <br>
+                <!-- <button option="BM" onclick="languageChanger()">BM</button>
+                <button option="EN" onclick="languageChanger()">ENG</button> -->
+                <select id="translate" onclick="translator()">
+                    <option value="English">English</option>
+                    <option value="Malay">Malay</option>
+                </select>
+            </div>
+
+            <br>
+
+            <!-- background theme color -->
+            <div>Theme Mode : <br>
+                <input type="radio" name="themes" value="light" id="light" onclick="themesChanger(1)"> Light
+                <input type="radio" name="themes" value="normal" id="normal" onclick="themesChanger(2)"> Normal<br>
+                <input type="radio" name="themes" value="dark" id="dark" onclick="themesChanger(3)"> Dark
+            </div>
+
+            <br>
+
+            <!-- font theme color -->
+            <div>Font Mode : <br>
+                <input type="radio" name="color" value="white" id="white" onclick="fontChanger(1)">White
+                <input type="radio" name="color" value="grey" id="grey" onclick="fontChanger(2)">Grey
+                <input type="radio" name="color" value="black" id="black" onclick="fontChanger(3)">Black<br>
+            </div>
+      
+            <br>
+
+            <!-- font resizer -->
+            <div>
+                Font Size : <br>
+                <span onclick="sizeChanger(1)" style="font-size: 1em;">A |</span>
+                <span onclick="sizeChanger(2)" style="font-size: 1.5em"> A |</span>
+                <span onclick="sizeChanger(3)" style="font-size: 2em"> A </span>
+            </div>
+      
+            <br>
+
+            <!-- read out loud the text -->
+            <div>Speech : <br>
+                <select id="voicelist"></select>
+                <!-- play button -->
+                <button><a id="speak2" class="speechbtn" href="#" onclick="textSpeechBm()">BM</button></a>
+                <button><a id="speak" class="speechbtn" href="#" onclick="textSpeechEng()">EN</button></a>
+                <br>
+               <!-- control button  for text to speech -->
+                Speech Setting : <br>
+                <button onclick="pauseVoice()">Pause</button>
+                <button onclick="resumeVoice()">Resume</button>
+                <button onclick="stopVoice()">Stop</button>
+            </div>
+    
+            <br>
+
+            <!-- setting -->
+            <div>Other : <br>
+                <button onclick="saveData();" value="Save" id="save">Save</button>
+                <button onclick="reset();" value="Reset" id="clear">Reset</button>
+            </div>
+        </form>
+  </div>
+
+    <!--footer-->
+    <div id="bgChanger5">
+        Copyright &#169; 2022 StoryBook
+    </div>
+ </div>   
+
+
+<script type="text/javascript">
+    //text translation
+    // function languageChanger(lang) {
+    //     location.hash = lang;
+    //     location.reload();
+    //     }
+
+    //     var language = {
+    //     en: {
+    //         story3: ""},
+
+    //         ms:{
+    //             story3:"" 
+    //         },
+    //     };
+    //     if (window.location.hash) {
+    //         if (window.location.hash == "#ms") {
+    //         storyContent.textContent =
+    //         language.ms.story3;
+    //     }
+    //     else if (window.location.hash == "#en") {
+    //         storyContent.textContent =
+    //         language.en.story3;
+    //     }
+    // }
+
+    /*story content english and malay*/
+    var en = "”Hello Alice dear, I’m Doctor Lawrence, I’m here on behalf of your other doctor, Mr Philips, as he’s been struck down with a frightful case of the flu. Now, how about you open the door fully and I’ll come in and take a look at you dear.” Alice moved her eyes up and down at the man that stood at her door. She could only see very little thought the crack she had made, she was only able to pick on his well tailored black jacket and shiny black shoes, his little briefcase he had clutched to his right side and the edge of his well ironed collar. His face was leaning away from the crack for some reason, so to indulge her curiosity, Alice carefully opened her door and turned to allow the Doctor and her mother to enter. Sitting herself at her little vanity desk, she finally turned to face the man so she could get a good look at his face. A small gaps left her lips as Alice was met with a man unusually messy ginger hair, the brightest orange you could imagine, with large, untamed ginger eyebrows and mismatched eyes. Closing her eyes and taking a deep breath, Alice decided she’d rather look at her hands than the doctor, he reminded her too much of the little Mad Hatter she ad met at the other end of the rabbit hole. “Alice dear, are you quite alright? You look quite pale dear, shall I get you something to eat or drink?” Alice shook her head, fiddling with the small clearing of the throat from the doctor, which caused Alice to flinch slightly. “Doctor, can I get you anything to drink? Perhaps some tea or glass of water?” Alice could hear her mother get to her feet, a habit she’d picked up everything a Doctor visited her daughter, as she hated to hear her daughter repeat the same story every single time, it broke her heart.";
+
+    var bm = "“Helo Alice sayang, saya doktor Lawrence, saya di sini bagi pihak doktor anda yang lain, Encik Philips, kerana dia telah diserang kes selesema yang menakutkan. Sekarang bagaimana kalau awak buka pintu sepenuhnya dan saya akan masuk dan lihat awak sayang.” Alice menggerakkan matanya ke atas dan ke bawah ke arah lelaki yang berdiri di pintunya. Dia hanya dapat melihat sedikit sahaja retakan yang dibuatnya, dia hanya mampu memilih jaket hitam yang disesuaikan dengan baik dan kasut hitam berkilat, beg bimbit kecilnya yang telah digenggamnya disebelah kanannya dan tepi kolarnya yang diseterika dengan baik. Wajahnya tersandar dari celah itu atas sebab tertentu, jadi untuk memenuhi rasa ingin tahu, Alice dengan berhati-hati membuka pintu dan berpaling untuk membenarkan Doktor dan ibunya masuk. Sambil duduk di meja solek kecilnya, dia akhirnya berpaling menghadap lelaki itu supaya dia dapat melihat wajah lelakit itu dengan baik. Celah kecil meninggalkan bibirnya apabila Alice dipertemukan dengan seorang lelaki yang berambut halia berantakan luar biasa, oren paling terang yang anda boleh bayangkan, dengan kening halia yan besar dan liar dan mata yang tidak sepadan. Dengan memejamkan matanya dan menarik nafas panjang, Alice memutuskan dia lebih suka melihat tangannya daripada doktor, dia terlalu mengingatkan nya tentang Mad Hatter kecil yang ditemui di hujung lubang arnab. “Alice sayang, awak baik-baik saja? Awak nampak agak pucat sayang, boleh saya bawakan awak makan atau minum?” Alice menggelengkan kepalanya, bermain-main dengan kerongkong kecil dari doktor, yang menyebabkan Alice tersentak sedikit. “Doktor , boleh saya bawakan awak minum apa-apa? Mungkin teh atau segelas air?” Alice dapat mendengar ibunya berdiri, tabiat dia mengambil semua yang doktor melawat anak perempuannya, kerana dia benci mendengar anak perempuannya mengulangi cerita yang sama setiap kali, ia mematahkan hatinya.";
+
+    localStorage.setItem("en" , en);
+    localStorage.setItem("bm" , bm);
+
+    console.log(localStorage.getItem("optionLanguage"));
+
+    var content = document.getElementById("content")
+    var choice = document.getElementById("translate");
+    var saveLanguage = localStorage.getItem("optionLanguage");
+
+    if (localStorage.getItem("optionLanguage") != null) {
+      if (localStorage.getItem("optionLanguage") == "English") {
+        content.innerHTML = localStorage.getItem("aliceTwoEn");
+      } else if (localStorage.getItem("optionLanguage") == "Malay") {
+        content.innerHTML = localStorage.getItem("aliceTwoBm");
+      }
+    } else {
+      content.innerHTML = localStorage.getItem("aliceTwoEn");
+    }
+
+
+  //text translation
+  function translator() {
+    if(choice.value == "English") {
+      localStorage.setItem("optionLanguage", "English");
+      content.innerHTML = localStorage.getItem("aliceTwoEn");
+
+      saveLanguage = choice.value;
+      localStorage.setItem("optionLanguage", saveLanguage);
+      
+    }
+
+    else if (choice.value == "Malay") {
+      localStorage.setItem("optionLanguage", "Malay");
+      content.innerHTML = localStorage.getItem("aliceTwoBm");
+      
+    }
+  }
+
+  //background theme
+  function themesChanger(mode){
+    localStorage.setItem("background", mode);
+      var div1 = document.getElementById("bgChanger1");
+      var div2 = document.getElementById("bgChanger2");
+      var div3 = document.getElementById("storyText");
+      var div4 = document.getElementById("bgChanger4");
+      var div5 = document.getElementById("bgChanger5");
+      //var color=document.getElementsByClassName("container") ;
+        
+      switch(mode){
+            case 1:
+            div1.style.background ="#FFFFFF";
+            div2.style.background ="#FFFFFF";
+            div3.style.background ="#FFFFFF";
+            div4.style.background ="#FFFFFF";
+            div5.style.background ="#FFFFFF";
+            break;
+
+            case 2:
+            div1.style.backgroundImage= 'radial-gradient(#444cf7, #444cf7 0.5px, #FFF7E4 0.5px)';
+            div2.style.backgroundImage= 'radial-gradient(#444cf7, #444cf7 0.5px, #FFF7E4 0.5px)';
+            div3.style.backgroundImage= 'radial-gradient(#444cf7, #444cf7 0.5px, #FFF7E4 0.5px)';
+            div4.style.backgroundImage= 'radial-gradient(#444cf7, #444cf7 0.5px, #FFF7E4 0.5px)';
+            div5.style.backgroundImage= 'radial-gradient(#444cf7, #444cf7 0.5px, #FFF7E4 0.5px)';
+            break;
+
+            case 3:
+            div1.style.background ="#323232";
+            div2.style.background ="#323232";
+            div3.style.background ="#323232";
+            div4.style.background ="#323232";
+            div5.style.background ="#323232";
+            break;
+    }
+  }
+
+  //font theme
+  function fontChanger(fmode){
+    localStorage.setItem("font", fmode);
+        var ff1 = document.getElementById("bgChanger1");
+        var ff2 = document.getElementById("ccolor2");
+        var ff3 = document.getElementById("storyText");
+        var ff4 = document.getElementById("ccolor3");
+        var ff5 = document.getElementById("bgChanger5");
+        var ff5 = document.getElementById("bgChanger4");
+        var ff6 = document.getElementById("speak");
+        var ff7 = document.getElementById("speak2");
+        var ff8 = document.getElementById("ccolor");
+        
+        switch(fmode){
+            case 1:
+            // ff1.style.color ="#FFFFFF";
+            // ff2.style.color ="#FFFFFF";
+            // ff3.style.color ="#FFFFFF";
+            // ff4.style.color ="#FFFFFF";
+            // ff5.style.color ="#FFFFFF";
+            // ff6.style.color ="#FFFFFF";
+            // ff7.style.color ="#FFFFFF";
+            ff8.style.color ="#FFFFFF";
+            break;
+
+            case 2:
+            // ff1.style.color= "#413F42";
+            // ff2.style.color= "#413F42";
+            // ff3.style.color= "#413F42";
+            // ff4.style.color= "#413F42";
+            // ff5.style.color= "#413F42";
+            // ff6.style.color= "#413F42";
+            // ff7.style.color= "#413F42";
+            ff8.style.color ="#413F42";
+            break;
+
+            case 3:
+            // ff1.style.color ="#180A0A";
+            // ff2.style.color ="#180A0A";
+            // ff3.style.color ="#180A0A";
+            // ff4.style.color ="#180A0A";
+            // ff5.style.color ="#180A0A";
+            // ff6.style.color ="#180A0A";
+            // ff7.style.color ="#180A0A";
+            ff8.style.color ="#180A0A";
+            break;
+        }
+    }
+
+  //font resizer
+  function sizeChanger(fontsize){
+    localStorage.setItem("fontsize", fontsize);
+      var text=document.getElementById("storyText");
+      switch(fontsize){
+            case 1: 
+            text.style.fontSize= "1em";
+            break;
+            case 2: 
+            text.style.fontSize= "1.5em";
+            break;
+            case 3: 
+            text.style.fontSize= "2em";
+            break;
+      }
+    }
+
+  //text to speech option
+    var voicelist = document.querySelector("#voicelist");
+    var btnSpeak = document.querySelector("#speak");
+    var tts = window.speechSynthesis;
+    var voices = [];
+
+    GetVoices();
+    if (speechSynthesis !== undefined) {
+        speechSynthesis.onvoiceschanged = GetVoices;
+    }
+
+
+  //read out load in English
+  function textSpeechEng(){
+      var toSpeak = new SpeechSynthesisUtterance(localStorage.getItem("en"));
+      var selectedVoiceName = voicelist.selectedOptions[0].getAttribute('data-name');
+            voices.forEach((voice)=>{
+                if(voice.name === selectedVoiceName){
+                    toSpeak.voice = voice;
+                }
+            });
+            tts.speak(toSpeak);
+  }
+
+  //read out load in Malay
+  function textSpeechBm(){
+      var toSpeak = new SpeechSynthesisUtterance(localStorage.getItem("bm"));
+      var selectedVoiceName = voicelist.selectedOptions[0].getAttribute('data-name');
+            voices.forEach((voice)=>{
+                if(voice.name === selectedVoiceName){
+                    toSpeak.voice = voice;
+                }
+            });
+            tts.speak(toSpeak);
+  }
+
+  //speech options
+  function GetVoices(){
+      voices = tts.getVoices();
+      
+      var selectedIndex = voicelist.selectedIndex < 0 ? 0 : voicelist.selectedIndex;
+      voicelist.innerHTML = '';
+      
+      voices.forEach((voice)=>{
+      var listItem = document.createElement('option');
+          listItem.textContent = voice.name;
+          listItem.setAttribute('data-lang', voice.lang);
+          listItem.setAttribute('data-name', voice.name);
+          voicelist.appendChild(listItem);
+      });
+
+     voicelist.selectedIndex = 0;
+  }
+
+  //text to speech control
+  function pauseVoice() {
+    window.speechSynthesis.pause();
+  }
+
+  function resumeVoice() {
+    window.speechSynthesis.resume();
+  }
+
+  function stopVoice() {
+    window.speechSynthesis.cancel();
+  }
+
+  //reset
+    function reset(){
+        document.getElementById("settingS").reset();
+    }
+  
+    //save
+    function saveData() {
+        localStorage.setItem("saveBackground", localStorage.getItem("background"));
+        localStorage.setItem("saveFont", localStorage.getItem("font"));
+        localStorage.setItem("saveFontSize", localStorage.getItem("fontSize"));
+    }
+
+    window.onload = function() {
+        var bg = localStorage.getItem("saveBackground");
+        var font = localStorage.getItem("saveFont");
+        var size =localStorage.getItem("fontsize");
+        console.log(bg + " " + font + " " + size);
+        themesChanger(parseInt(bg));
+        fontChanger(parseInt(font));
+        sizeChanger(parseInt(size));
+      }
+
+    // $(document).ready(function(){
+    //     // reset the content of the form only
+    //     $("#clear").click(function(){
+    //         $("#settingS").trigger("reset");
+    //     });
+    // });
+
+    //===========Text to Speech Pitch===========
+    // function pitchSlide(){
+    //     var slider = document.getElementById("pitchSlider");
+    //     var valueP = document.getElementById("pitchValue");
+    //     valueP.innerHTML = slider.value; 
+    //     //to display quantity value
+    //     slider.oninput = function() {
+    //     valueP.innerHTML = this.value;
+    //     }
+
+    //     speechSynthesis.pitch= valueP;
+    // }
+</script>
+</body>
+</html>
